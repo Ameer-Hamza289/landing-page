@@ -1,12 +1,10 @@
-import { useRef, useEffect, useState } from 'react'
-import facebookIcon from '../assets/facebook.svg'
-import twitterIcon from '../assets/twitter.svg'
-import instagramIcon from '../assets/instagram.svg'
-import youtubeIcon from '../assets/youtube.svg'
-import { getSocialIcon } from '../utils/socialIcons'
-import { testimonialCards } from '../data/testimonials'
-
-
+import { useRef, useEffect, useState } from "react";
+import facebookIcon from "../assets/facebook.svg";
+import twitterIcon from "../assets/twitter.svg";
+import instagramIcon from "../assets/instagram.svg";
+import youtubeIcon from "../assets/youtube.svg";
+import { getSocialIcon } from "../utils/socialIcons";
+import { testimonialCards } from "../data/testimonials";
 
 export default function UserTestimonialsSection() {
   const [currentTestimonialCard, setCurrentTestimonialCard] = useState(0);
@@ -35,13 +33,13 @@ export default function UserTestimonialsSection() {
     };
 
     calculateTranslate();
-    window.addEventListener('resize', calculateTranslate);
-    return () => window.removeEventListener('resize', calculateTranslate);
+    window.addEventListener("resize", calculateTranslate);
+    return () => window.removeEventListener("resize", calculateTranslate);
   }, [currentTestimonialCard]);
 
   // Calculate max index based on screen size
   const getMaxTestimonialIndex = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const isMobile = window.innerWidth < 768;
       return Math.max(0, testimonialCards.length - (isMobile ? 1 : 3));
     }
@@ -74,45 +72,94 @@ export default function UserTestimonialsSection() {
           </div>
           <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-end gap-4 md:gap-6">
             <p className="text-base md:text-lg text-gray-600">
-              What you say about how Setapp <br className="hidden sm:block" /> powers you up.
+              What you say about how Setapp <br className="hidden sm:block" />{" "}
+              powers you up.
             </p>
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
-              <a href="#" className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                <img src={facebookIcon} alt="Facebook" className="w-full h-full" />
-              </a>
-              <a href="#" className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                <img src={twitterIcon} alt="Twitter" className="w-full h-full" />
-              </a>
-              <a href="#" className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                <img src={instagramIcon} alt="Instagram" className="w-full h-full" />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                <img src={youtubeIcon} alt="YouTube" className="w-full h-full" />
-              </a>
-            </div>
-            {/* Navigation Arrows */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={prevTestimonialCard}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="Previous testimonial"
+              <a
+                href="#"
+                className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={nextTestimonialCard}
-                className="text-gray-400 hover:text-gray-600 transition-colors"
-                aria-label="Next testimonial"
+                <img
+                  src={facebookIcon}
+                  alt="Facebook"
+                  className="w-full h-full"
+                />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
+                <img
+                  src={twitterIcon}
+                  alt="Twitter"
+                  className="w-full h-full"
+                />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8  rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
+              >
+                <img
+                  src={instagramIcon}
+                  alt="Instagram"
+                  className="w-full h-full"
+                />
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+              >
+                <img
+                  src={youtubeIcon}
+                  alt="YouTube"
+                  className="w-full h-full"
+                />
+              </a>
             </div>
           </div>
+        </div>
+        {/* Navigation Arrows */}
+        <div className="flex items-center justify-end gap-2 my-4">
+          <button
+            onClick={prevTestimonialCard}
+            className="text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              className="w-5 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={nextTestimonialCard}
+            className="text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Next testimonial"
+          >
+            <svg
+              className="w-5 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
 
         {/* Testimonial Cards Carousel - Shows 3 cards at once */}
@@ -120,11 +167,14 @@ export default function UserTestimonialsSection() {
           <div
             className="flex gap-2 transition-transform duration-300 ease-in-out"
             style={{
-              transform: `translateX(${translateX}px)`
+              transform: `translateX(${translateX}px)`,
             }}
           >
             {testimonialCards.map((card, index) => (
-              <div key={index} className="flex-shrink-0 w-full md:w-[calc(33.333%-0.5rem)]">
+              <div
+                key={index}
+                className="flex-shrink-0 w-full md:w-[calc(33.333%-0.5rem)]"
+              >
                 {/* Card Container - Grayish Background */}
                 <div className="bg-gray-700 rounded-lg border border-gray-200 overflow-hidden">
                   {/* Inner Colored Background Section with Quote */}
@@ -136,13 +186,15 @@ export default function UserTestimonialsSection() {
                   {/* Author Info Section - White Background */}
                   <div className="bg-gray-200 p-4 md:p-6 flex items-center justify-between">
                     <div className="flex-1">
-                      <p className="text-gray-900 font-semibold text-base">{card.name}</p>
-                      <p className="text-gray-500 text-sm mt-1">{card.handle}</p>
+                      <p className="text-gray-900 font-semibold text-base">
+                        {card.name}
+                      </p>
+                      <p className="text-gray-500 text-sm mt-1">
+                        {card.handle}
+                      </p>
                     </div>
                     {/* Social Media Icon on Right */}
-                    <div className="ml-4">
-                      {getSocialIcon(card.socialIcon)}
-                    </div>
+                    <div className="ml-4">{getSocialIcon(card.socialIcon)}</div>
                   </div>
                 </div>
               </div>
@@ -155,9 +207,13 @@ export default function UserTestimonialsSection() {
           {[0, 1, 2, 3, 4].map((_, index) => (
             <button
               key={index}
-              onClick={() => goToTestimonialCard(Math.min(index, testimonialCards.length - 1))}
+              onClick={() =>
+                goToTestimonialCard(
+                  Math.min(index, testimonialCards.length - 1)
+                )
+              }
               className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentTestimonialCard ? 'bg-black' : 'bg-gray-400'
+                index === currentTestimonialCard ? "bg-black" : "bg-gray-400"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -165,8 +221,5 @@ export default function UserTestimonialsSection() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-
-

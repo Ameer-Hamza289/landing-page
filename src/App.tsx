@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection'
 import FeaturesShowcase from './components/FeaturesShowcase'
 import JourneySection from './components/JourneySection'
 import VideoTestimonialSection from './components/VideoTestimonialSection'
+import UserTestimonialsSection from './components/UserTestimonialsSection'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <FeaturesShowcase/>
       <JourneySection />
       <VideoTestimonialSection />
+      <UserTestimonialsSection />
       <Footer/>
     </div>
   )

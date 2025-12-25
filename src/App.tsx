@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
 import FeaturesShowcase from './components/FeaturesShowcase'
 import JourneySection from './components/JourneySection'
+import VideoTestimonialSection from './components/VideoTestimonialSection'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HeroSection/>
       <FeaturesShowcase/>
       <JourneySection />
+      <VideoTestimonialSection />
       <Footer/>
     </div>
   )

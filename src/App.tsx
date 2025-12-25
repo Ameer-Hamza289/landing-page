@@ -6,6 +6,7 @@ import FeaturesShowcase from './components/FeaturesShowcase'
 import JourneySection from './components/JourneySection'
 import VideoTestimonialSection from './components/VideoTestimonialSection'
 import UserTestimonialsSection from './components/UserTestimonialsSection'
+import PromotionalCard from './components/PromotionalCard'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <JourneySection />
       <VideoTestimonialSection />
       <UserTestimonialsSection />
+      <PromotionalCard />
       <Footer/>
     </div>
   )
